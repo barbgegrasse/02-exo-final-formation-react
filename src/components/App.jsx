@@ -13,14 +13,12 @@ import MePage from './MePage';
 import * as Sentry from '@sentry/browser';
 
 const RELEASE = '7e314acd80ec22e73bc706851d50ea848277dd01';
-if (process.env.NODE_ENV === 'production') {
-  console.info('production !');
-  Sentry.init({
-    dsn:
-      'https://8d6259633fb64e91aaa9b6ad76a422d7@o451965.ingest.sentry.io/5438682',
-    release: RELEASE,
-  });
-}
+
+Sentry.init({
+  dsn:
+    'https://8d6259633fb64e91aaa9b6ad76a422d7@o451965.ingest.sentry.io/5438682',
+  release: RELEASE,
+});
 
 const App = () => {
   const [bars, setBars] = useBars();

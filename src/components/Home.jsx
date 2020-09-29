@@ -8,9 +8,8 @@ const Home = ({ bars }) => {
     try {
       throw new Error('Caught');
     } catch (err) {
-      if (process.env.NODE_ENV !== 'production') {
-        console.error(err);
-      }
+      console.error(err);
+
       Sentry.captureException(err);
     }
   };
